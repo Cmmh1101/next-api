@@ -12,7 +12,7 @@ function handler(req, res) {
       text: feedbackText,
     };
     //   store in a database or in a file
-    path.join(process.cwd(), "data", "feedback.json");
+    const filePath = path.join(process.cwd(), "data", "feedback.json");
     const fileData = fs.readFileSync(filePath);
     const data = JSON.parse(fileData);
     data.push(newFeedback);
