@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { buildFeedbackPath, extractFeedback } from "../api/feedback";
+import { buildFeedbackPath, extractFeedback } from "../api/feedback/index";
 
 const feedbackPage = ({ feedbackItems }) => {
   const [feedbackData, setFeedbackData] = useState();
