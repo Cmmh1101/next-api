@@ -1,6 +1,6 @@
 import { buildFeedbackPath, extractFeedback } from "./feedback";
 
-function handler() {
+function handler(req, res) {
   const feedbackId = req.query.feedbackId;
   const filePath = buildFeedbackPath();
   const feedbackData = extractFeedback(filePath);
@@ -8,7 +8,7 @@ function handler() {
     (feedback) => feedback.id === feedbackId
   );
 
-  resizeBy.status(200).json({ feedback: selectedFeedback });
+  res.status(200).json({ feedback: selectedFeedback });
 }
 
 export default handler;
